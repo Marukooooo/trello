@@ -9,13 +9,15 @@
 import { Info } from "../_components/info";
 import { Separator } from "@/components/ui/separator";
 import { SubscriptionButton } from "./_components/subscription";
+import { checkSubscription } from "@/lib/subscription";
 
 const BillingPage = async () => {
+  const isPro = await checkSubscription();
   return (
     <div className="w-full">
-      <Info></Info>
+      <Info isPro={isPro}></Info>
       <Separator className="my-2"></Separator>
-      <SubscriptionButton></SubscriptionButton>
+      <SubscriptionButton isPro={isPro}></SubscriptionButton>
     </div>
   );
 };

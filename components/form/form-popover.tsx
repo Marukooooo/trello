@@ -37,7 +37,7 @@ export const FormPopover = ({
   const router = useRouter();
   const { execute, fieldErrors } = useAction(createBoard, {
     onSuccess: (data) => {
-      toast.success("面板已创建");
+      toast.success("Board created");
       closeRef.current?.click();
       router.push(`/board/${data.id}`);
     },
@@ -63,7 +63,7 @@ export const FormPopover = ({
         sideOffset={sideOffset}
       >
         <div className="text-sm font-medium text-center text-neutral-600 pb-4">
-          创建面板
+          Create Board
         </div>
         <PopoverClose ref={closeRef} asChild>
           <Button
@@ -78,12 +78,12 @@ export const FormPopover = ({
             <FormPicker id="image" errors={fieldErrors}></FormPicker>
             <FormInput
               id="title"
-              label="面板标题"
+              label="Board Title"
               type="text"
               errors={fieldErrors}
             />
           </div>
-          <FormSubmit className="w-full">创建</FormSubmit>
+          <FormSubmit className="w-full">Create</FormSubmit>
         </form>
       </PopoverContent>
     </Popover>

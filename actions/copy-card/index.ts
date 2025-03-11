@@ -15,7 +15,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
   if (!userId || !orgId) {
     return {
-      error: "无访问权限",
+      error: "Unauthorized",
     };
   }
 
@@ -36,7 +36,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
     if (!cardToCopy) {
       return {
-        error: "未找到该卡片",
+        error: "Card not found",
       };
     }
     const lastCard = await db.card.findFirst({
@@ -63,7 +63,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
   } catch (error) {
     return {
-      error: "复制失败",
+      error: "Failed to copy.",
     };
   }
 

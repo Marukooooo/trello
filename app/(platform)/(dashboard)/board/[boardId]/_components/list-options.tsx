@@ -27,7 +27,7 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
   const closeRef = useRef<ElementRef<"button">>(null);
   const { execute: excuteDelete } = useAction(deleteList, {
     onSuccess: (data) => {
-      toast.success(`List "${data.title}" 已删除 `);
+      toast.success(`List "${data.title}" deleted `);
       closeRef.current?.click();
     },
     onError: (error) => {
@@ -81,7 +81,7 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
           className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm"
           variant="ghost"
         >
-          添加卡片
+          Add card...
         </Button>
         <form action={onCopy}>
           <input hidden name="id" id="id" value={data.id} />
@@ -90,7 +90,7 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
             variant="ghost"
             className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm"
           >
-            复制 list...
+            Copy list...
           </FormSubmit>
         </form>
         <Separator></Separator>
@@ -101,7 +101,7 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
             variant="ghost"
             className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm"
           >
-            删除该 list
+            Delete this list
           </FormSubmit>
         </form>
       </PopoverContent>

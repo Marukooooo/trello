@@ -30,7 +30,7 @@ export const Header = ({ data }: HeaderProps) => {
         queryKey: ["card-logs", data.id],
       });
 
-      toast.success(`已重命名 "${data.title}"`);
+      toast.success(`Renamed to "${data.title}"`);
       setTitle(data.title);
     },
     onError: (error) => {
@@ -75,7 +75,7 @@ export const Header = ({ data }: HeaderProps) => {
           />
         </form>
         <p className="text-sm text-muted-foreground">
-          位于 list <span className="underline">{data.list.title}</span>
+          in list <span className="underline">{data.list.title}</span>
         </p>
       </div>
     </div>

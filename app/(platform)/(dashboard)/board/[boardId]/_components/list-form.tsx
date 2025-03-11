@@ -35,7 +35,7 @@ export const ListForm = () => {
 
   const { execute, fieldErrors } = useAction(createList, {
     onSuccess: (data) => {
-      toast.success(`List "${data.title}" 已创建`);
+      toast.success(`List "${data.title}" created`);
       disableEditing();
       router.refresh();
     },
@@ -76,11 +76,11 @@ export const ListForm = () => {
             errors={fieldErrors}
             id="title"
             className="text-sm px-2 py-1 h-7 font-medium border-transparent hover:border-input transition"
-            placeholder="输入 list 标题"
+            placeholder="Enter list title..."
           ></FormInput>
           <input hidden value={params.boardId} name="boardId" />
           <div className="flex items-center gap-x-1">
-            <FormSubmit>添加</FormSubmit>
+            <FormSubmit>Add list</FormSubmit>
             <Button onClick={disableEditing} size="sm" variant="ghost">
               <X className="h-5 w-5"></X>
             </Button>
@@ -97,7 +97,7 @@ export const ListForm = () => {
         className="w-full rounded-md bg-white/80 hover:bg-white/50 transition p-3 flex items-center font-medium text-sm"
       >
         <Plus className="h-4 w-4 mr-2"></Plus>
-        添加 list
+        Add list
       </button>
     </ListWrapper>
   );

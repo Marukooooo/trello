@@ -16,7 +16,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
   if (!userId || !orgId) {
     return {
-      error: "无访问权限",
+      error: "Unauthorized",
     };
   }
 
@@ -61,7 +61,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
   } catch (error) {
     return {
-      error: "创建失败",
+      error: "Failed to create.",
     };
   }
 

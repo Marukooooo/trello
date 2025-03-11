@@ -56,7 +56,7 @@ export const Description = ({ data }: DescriptionProps) => {
       queryClient.invalidateQueries({
         queryKey: ["card-logs", data.id],
       });
-      toast.success(`卡片 "${data.title}" 已更新`);
+      toast.success(`Card "${data.title}" updated`);
       disableEditing();
     },
     onError: (error) => {
@@ -79,26 +79,26 @@ export const Description = ({ data }: DescriptionProps) => {
     <div className="flex items-start gap-x-3 w-full">
       <AlignLeft className="h-5 w-5 mt-0.5 text-neutral-700" />
       <div className="w-full">
-        <p className="font-semibold text-neutral-700 mb-2">描述</p>
+        <p className="font-semibold text-neutral-700 mb-2">Description</p>
         {isEditing ? (
           <form action={onSubmit} ref={formRef} className="space-y-2">
             <FormTextarea
               id="description"
               className="w-full mt-2"
-              placeholder="添加更多细节描述"
+              placeholder="Add more detailed description..."
               defaultValue={data.description || undefined}
               errors={fieldErrors}
               ref={textareaRef}
             />
             <div className="flex items-center gap-x-2">
-              <FormSubmit>保存</FormSubmit>
+              <FormSubmit>Save</FormSubmit>
               <Button
                 type="button"
                 onClick={disableEditing}
                 size="sm"
                 variant="ghost"
               >
-                取消
+                Cancel
               </Button>
             </div>
           </form>
@@ -108,7 +108,7 @@ export const Description = ({ data }: DescriptionProps) => {
             role="button"
             className="min-h-[78px] bg-neutral-200 text-sm font-medium py-3 px-3.5 rounded-md"
           >
-            {data.description || "添加更多细节描述..."}
+            {data.description || "Add more detailed description..."}
           </div>
         )}
       </div>

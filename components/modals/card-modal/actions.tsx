@@ -65,7 +65,7 @@ export const Actions = ({ data }: ActionsProps) => {
 
   return (
     <div className="space-y-2 mt-2">
-      <p className="text-xs font-semibold">操作</p>
+      <p className="text-xs font-semibold">Actions</p>
       <Button
         onClick={onCopy}
         disabled={isLoadingCopy}
@@ -74,7 +74,7 @@ export const Actions = ({ data }: ActionsProps) => {
         size="inline"
       >
         <Copy className="h-4 w-4 mr-2" />
-        复制
+        Copy
       </Button>
       <Button
         onClick={onDelete}
@@ -84,7 +84,7 @@ export const Actions = ({ data }: ActionsProps) => {
         size="inline"
       >
         <Trash className="h-4 w-4 mr-2" />
-        删除
+        Delete
       </Button>
     </div>
   );

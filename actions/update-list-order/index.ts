@@ -39,7 +39,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     lists = await db.$transaction(transaction);
   } catch (error) {
     return {
-      error: "重排失败",
+      error: "Failed to reorder.",
     };
   }
 

@@ -68,12 +68,12 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProps>(
             id="title"
             onKeyDown={onTextareaKeyDown}
             ref={ref}
-            placeholder="输入卡片标题..."
+            placeholder="Enter a title for this card..."
             errors={fieldErrors}
           ></FormTextarea>
           <input hidden id="listId" name="listId" value={listId} readOnly />
           <div className="flex items-center gap-x-1">
-            <FormSubmit>添加卡片</FormSubmit>
+            <FormSubmit>Add Card</FormSubmit>
             <Button onClick={disableEditing} size="sm" variant="ghost">
               <X className="H-5 W-5"></X>
             </Button>
@@ -90,7 +90,7 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProps>(
           variant="ghost"
         >
           <Plus className="h-4 w-4 mr-2"></Plus>
-          添加卡片
+          Add a Card
         </Button>
       </div>
     );

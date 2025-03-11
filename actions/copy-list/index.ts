@@ -15,7 +15,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
   if (!userId || !orgId) {
     return {
-      error: "无访问权限",
+      error: "Unauthorized",
     };
   }
 
@@ -38,7 +38,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
     if (!listToCopy) {
       return {
-        error: "未找到该list",
+        error: "List not found",
       };
     }
     const lastList = await db.list.findFirst({
@@ -77,7 +77,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
   } catch (error) {
     return {
-      error: "复制失败",
+      error: "Failed to copy.",
     };
   }
 

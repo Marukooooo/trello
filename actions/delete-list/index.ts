@@ -41,7 +41,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
   } catch (error) {
     return {
-      error: "删除失败",
+      error: "Failed to delete.",
     };
   }
 

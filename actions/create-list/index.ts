@@ -33,7 +33,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
     if (!board) {
       return {
-        error: "找不到面板",
+        error: "Board not found.",
       };
     }
 

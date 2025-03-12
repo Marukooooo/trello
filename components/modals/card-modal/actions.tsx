@@ -24,7 +24,7 @@ export const Actions = ({ data }: ActionsProps) => {
     copyCard,
     {
       onSuccess: (data) => {
-        toast.success(`卡片 "${data.title} 已复制"`);
+        toast.success(`Card "${data.title}" copied`);
         cardModal.onClose();
       },
       onError: (error) => {
@@ -36,7 +36,7 @@ export const Actions = ({ data }: ActionsProps) => {
     deleteCard,
     {
       onSuccess: (data) => {
-        toast.success(`卡片 "${data.title} 已删除"`);
+        toast.success(`Card "${data.title}" deleted`);
         cardModal.onClose();
       },
       onError: (error) => {

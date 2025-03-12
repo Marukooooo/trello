@@ -27,7 +27,7 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
 
   const { execute: excuteUpdateListOrder } = useAction(updateListOrder, {
     onSuccess: () => {
-      toast.success("Lists 已重排");
+      toast.success("List reordered");
     },
     onError: (error) => {
       toast.error(error);
@@ -36,7 +36,7 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
 
   const { execute: excuteUpdateCardOrder } = useAction(updateCardOrder, {
     onSuccess: () => {
-      toast.success("卡片已重排");
+      toast.success("Card reordered");
     },
     onError: (error) => {
       toast.error(error);
